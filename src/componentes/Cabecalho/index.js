@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function Cabecalho() {
+export default function Cabecalho(props) {
   return ( 
-    <div>Cabecalho</div>
+    <>
+        <div>{props.titulo}</div>
+        <h1>{props.subtitulo}</h1>
+    </>
   )
 }
