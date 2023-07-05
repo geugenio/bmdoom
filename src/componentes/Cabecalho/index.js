@@ -1,10 +1,11 @@
 import React from 'react'
-
+import styles from "./Cabecalho.module.css"
 export default function Cabecalho(props) {
   return ( 
-    <>
-        <div>{props.titulo}</div>
-        <h1>{props.subtitulo}</h1>
-    </>
+    <div className={styles.cabecalho}>
+      <img src = {props.logo} alt=""></img>
+      <p className={styles.titulo} >{props.titulo}</p>
+      <p className={`${styles.titulo} ${styles.subtitulo}`} >{props.subtitulo}</p>
+    </div>
   )
 }
