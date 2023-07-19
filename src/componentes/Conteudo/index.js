@@ -10,7 +10,3 @@ export default function Conteudo() { //Criando uma função de nome "Conteudo", 
     <div>Conteudo</div>
   )
 }
-
-export function OlaMundo(){
-    console.log("Ola mundo")
-  }

@@ -2,11 +2,11 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(114, 221, 110);
 }
 .titulo {
     font-size: 3rem;
-    color: rgb(172, 235, 157);
-    background: #396e4f;
+    color: rgb(15, 160, 204);
 }
 
 .subtitulo{
