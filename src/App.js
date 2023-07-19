@@ -2,6 +2,7 @@ import './App.css';
 import Cabecalho from "./componentes/Cabecalho";
 import Conteudo from './componentes/Conteudo';
 import Rodape from './componentes/Rodape';
+
 /*
 Arquivo APP JSX
 
@@ -17,7 +18,7 @@ function App() {
     <Cabecalho logo="logo192.png" titulo = "BMDOOM"/>
 
     {/* <Conteudo/> */}
-    <Rodape twitter = "fa-brands fa-twitter"/>
+    <Rodape twitter = "faTwitter"/>
     </>
   );
 }

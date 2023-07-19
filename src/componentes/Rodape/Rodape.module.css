@@ -1,10 +1,12 @@
 .rodape{
     display: absolute;
-    transform: translateY(500px);
-    background-color: bisque;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    background-color: rgb(133, 230, 141);
     font-size: 1.2rem;
 }
 p{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
 }
