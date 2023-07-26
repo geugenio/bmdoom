@@ -15,10 +15,10 @@ function App() {
     // O react substitui className por class pq class é palavra reservada do JS.
     <>
     {/* Nosso cabecalho tem uma propriedade chamada titulo */}
-    <Cabecalho logo="logo192.png" titulo = "BMDOOM"/>
+    <Cabecalho logo="ponto.png" titulo = "BMDOOM"/>
 
-    {/* <Conteudo/> */}
-    <Rodape twitter = "faTwitter"/>
+    <Conteudo/>
+    <Rodape/>
     </>
   );
 }

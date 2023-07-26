@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Lilita+One&display=swap');
+
 .rodape{
-    display: absolute;
     bottom: 0px;
     position: fixed;
     width: 100%;
-    background-color: rgb(133, 230, 141);
+    background-color: rgb(156, 218, 98);
     font-size: 1.2rem;
+    font-family: 'Lilita One', cursive;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 p{
+    display: inline-flex;
+}
+.icons{
     display: flex;
-    justify-content:space-between;
+}
+.icon{
+    margin-left: 20px;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.719);
 }

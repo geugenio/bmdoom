@@ -9,16 +9,24 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons"
 //Necessário importar o svg individualmente, assim como o global. Foi necessário instalar o free-brands-svg-icons, que anteriormente nao estava instalado.
 export default function Rodape(props) {
   return (
-    <div className ={styles.rodape}>
-      <p className={styles.dataCorrente}>{mostraData()}</p>
-      <FontAwesomeIcon icon={faTwitter} />
-      <FontAwesomeIcon icon={faFacebook} />
-      <FontAwesomeIcon icon={faInstagram} />
-      </div>
-  )
 
-  function mostraData(){
-    const date = new Date();
-    return date.toLocaleDateString();
-  }
+    <div className ={styles.rodape}>
+        <p className={styles.dataCorrente}>{mostraData()}</p>
+        <div className={styles.icons}>
+        <a href="#" className={styles.icon}>
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
+        <a href="#" className={styles.icon}>
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a href="#" className={styles.icon}>
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        </div>
+    </div>
+  )
+}
+function mostraData(){
+  const date = new Date();
+  return date.toLocaleDateString();
 }

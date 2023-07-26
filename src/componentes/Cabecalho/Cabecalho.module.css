@@ -1,14 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 .cabecalho{
     display:flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(114, 221, 110);
+    background-color: rgb(156, 218, 98);
 }
 .titulo {
     font-size: 3rem;
-    color: rgb(15, 160, 204);
+    color: rgb(0, 0, 0);
+    margin: 15px;
+    font-family: 'Concert One', cursive;
 }
-
 .subtitulo{
     font-size: 2rem;
 }
+img{
+    width: 50px;
+}
+img:hover{
+    animation: rotaciona 2s infinite linear;
+}
+ul{
+    font-family: 'Concert One', cursive;
+    display: flex;
+    list-style: none;
+}
+li{
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li:hover{
+    background-color: rgba(255, 255, 255, 0.466);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@keyframes rotaciona {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    75%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+  }
