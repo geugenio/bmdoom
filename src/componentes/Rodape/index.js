@@ -27,6 +27,6 @@ export default function Rodape(props) {
   )
 }
 function mostraData(){
-  const date = new Date();
-  return date.toLocaleDateString();
+  const dataLocal = new Date();
+  return dataLocal.toLocaleDateString();
 }
