@@ -21,23 +21,6 @@ img{
 img:hover{
     animation: rotaciona 2s infinite linear;
 }
-ul{
-    font-family: 'Concert One', cursive;
-    display: flex;
-    list-style: none;
-}
-li{
-    padding: 20px;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-li:hover{
-    background-color: rgba(255, 255, 255, 0.466);
-    border-radius: 20px;
-    cursor: pointer;
-}
 
 @keyframes rotaciona {
     0% {
