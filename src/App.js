@@ -1,7 +1,8 @@
-import './App.css';
+import "./App.css";
 import Cabecalho from "./componentes/Cabecalho";
-import Conteudo from './componentes/Conteudo';
-import Rodape from './componentes/Rodape';
+import Conteudo from "./componentes/Conteudo";
+import Rodape from "./componentes/Rodape";
+import Estados from "./exemplos/Estados";
 
 /*
 Arquivo APP JSX
@@ -14,11 +15,13 @@ function App() {
   return (
     // O react substitui className por class pq class é palavra reservada do JS.
     <>
-    {/* Nosso cabecalho tem uma propriedade chamada titulo */}
-    <Cabecalho logo="estrela.png" titulo = "BMDOOM"/>
+      {/* Nosso cabecalho tem uma propriedade chamada titulo */}
 
-    <Conteudo/>
-    <Rodape/>
+      {/* <Cabecalho logo="estrela.png" titulo="BMDOOM" />
+
+      <Conteudo />
+      <Rodape /> */}
+      <Estados />
     </>
   );
 }
