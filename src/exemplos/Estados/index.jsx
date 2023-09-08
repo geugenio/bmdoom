@@ -5,6 +5,18 @@ const Estados = () => {
   //hook
   const [nome, setNome] = useState("nome do usuario");
   const [url, setUrl] = useState("URL");
+
+  const [favoritos, setFavoritos] = useState([]); //const com um array vazio
+
+  function adicionaFavorito(nome, url) {
+    let favorito = { nome, url }; //criando uma variavel tipo let chamada favorito
+    favoritos.push(favorito);
+    setFavoritos(favoritos);
+    console.log(favoritos);
+
+    //... significa espalhar, irá espalhar os itens que estão dentro do array
+  }
+
   function handleNome(valor) {
     setNome(valor);
   }
@@ -25,7 +37,13 @@ const Estados = () => {
         value={url}
         onChange={(e) => handleUrl(e.target.value)}
       />
-      <button>Adicionar</button>
+      <button onClick={() => adicionaFavorito(nome, url)}>Adicionar</button>
+      <h1>Favoritos</h1>
+      <ul>
+        {favoritos.map((elemento) => (
+          <li>{elemento.nome}</li>
+        ))}
+      </ul>
     </div>
   );
 };

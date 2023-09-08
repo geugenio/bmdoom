@@ -1,7 +1,7 @@
 import "./App.css";
-import Cabecalho from "./componentes/Cabecalho";
-import Conteudo from "./componentes/Conteudo";
-import Rodape from "./componentes/Rodape";
+// import Cabecalho from "./componentes/Cabecalho";
+// import Conteudo from "./componentes/Conteudo";
+// import Rodape from "./componentes/Rodape";
 import Estados from "./exemplos/Estados";
 
 /*
