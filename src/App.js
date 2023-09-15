@@ -1,7 +1,7 @@
 import "./App.css";
-// import Cabecalho from "./componentes/Cabecalho";
-// import Conteudo from "./componentes/Conteudo";
-// import Rodape from "./componentes/Rodape";
+import Cabecalho from "./componentes/Cabecalho";
+import Conteudo from "./componentes/Conteudo";
+import Rodape from "./componentes/Rodape";
 import Estados from "./exemplos/Estados";
 
 /*
@@ -17,11 +17,9 @@ function App() {
     <>
       {/* Nosso cabecalho tem uma propriedade chamada titulo */}
 
-      {/* <Cabecalho logo="estrela.png" titulo="BMDOOM" />
-
+      <Cabecalho logo="estrela.png" titulo="BMDOOM" />
       <Conteudo />
-      <Rodape /> */}
-      <Estados />
+      <Rodape />
     </>
   );
 }
