@@ -1,17 +1,45 @@
 import React from "react";
 import { useState } from "react";
-
+import styles from "./Conteudo.module.css";
 const Conteudo = () => {
-  const [url, setUrl] = useState("URL");
+  const [url, setUrl] = useState("");
+  const [nomeSite, setNomeSite] = useState("");
+
+  let favoritos = [];
+  function salvarFavorito() {
+    favoritos = [...favoritos, { nomeSite, url }];
+    localStorage.setItem("favorito", JSON.stringify(favoritos));
+  }
+
   return (
-    <div>
+    <div className={styles.area}>
       Conteudo
-      <form onSubmit={() => alert("Favorito salvo!")}>
+      <form
+        className={styles.formulario}
+        onSubmit={() => alert("Favorito salvo!")}
+      >
         <label>Nome do Site</label>
-        <input name="nome_site"></input>
+        <h1>{nomeSite}</h1>
+        <input
+          name="nome_site"
+          onChange={(evento) => {
+            setNomeSite(evento.target.value);
+            console.log(nomeSite);
+          }}
+        ></input>
+        <br></br>
+
         <label>Url</label>
-        <input type="url" name="url"></input>
-        <button>Salvar</button>
+        <h1>{url}</h1>
+        <input
+          name="url_site"
+          onChange={(evento) => {
+            setUrl(evento.target.value);
+            console.log(url);
+          }}
+        ></input>
+        <br></br>
+        <button onClick={salvarFavorito()}>Salvar</button>
       </form>
     </div>
   );
