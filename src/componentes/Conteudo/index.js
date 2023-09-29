@@ -2,49 +2,62 @@ import React from "react";
 import { useState } from "react";
 import styles from "./Conteudo.module.css";
 const Conteudo = () => {
-  const [url, setUrl] = useState("");
   const [nomeSite, setNomeSite] = useState("");
 
-  let favoritos = [];
+  const [url, setUrl] = useState("");
+
+  const [favoritos, setFavoritos] = useState([]);
+
   function salvarFavorito() {
-    favoritos = [...favoritos, { nomeSite, url }];
-    localStorage.setItem("favorito", JSON.stringify(favoritos));
+    setFavoritos([...favoritos, { nomeSite, url }]);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
 
   return (
-    <div className={styles.area}>
-      Conteudo
-      <form
-        className={styles.formulario}
-        onSubmit={() => alert("Favorito salvo!")}
-      >
-        <label>Nome do Site</label>
-        <h1>{nomeSite}</h1>
-        <input
-          name="nome_site"
-          onChange={(evento) => {
-            setNomeSite(evento.target.value);
-            console.log(nomeSite);
-          }}
-        ></input>
-        <br></br>
+    <>
+      <ul>
+        {favoritos[0] != undefined &&
+          favoritos.map((favorito) => (
+            <li>
+              {favorito.nomeSite} : {favorito.url}
+              <br></br>
+            </li>
+          ))}
+      </ul>
 
-        <label>Url</label>
-        <h1>{url}</h1>
-        <input
-          name="url_site"
-          onChange={(evento) => {
-            setUrl(evento.target.value);
-            console.log(url);
-          }}
-        ></input>
-        <br></br>
-        <button onClick={salvarFavorito()}>Salvar</button>
-      </form>
-    </div>
+      <div className={styles.area}>
+        <h1>Conteudo</h1>
+        <form className={styles.formulario}>
+          <label>Nome do Site</label>
+          <h1>{nomeSite}</h1>
+
+          <input
+            name="nome_site"
+            onChange={(evento) => {
+              setNomeSite(evento.target.value);
+            }}
+          ></input>
+          <br></br>
+
+          <label>Url</label>
+          <h1>{url}</h1>
+          <input
+            type="url"
+            name="url"
+            onChange={(evento) => {
+              setUrl(evento.target.value);
+            }}
+          ></input>
+          <br></br>
+          <input
+            type="button"
+            value="salvar"
+            onClick={() => salvarFavorito()}
+          />
+        </form>
+      </div>
+    </>
   );
 };
 
 export default Conteudo;
-
-//Arquivo com base no rafce, instalar
