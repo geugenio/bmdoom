@@ -1,0 +1,15 @@
+.area .formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30%;
+}
+.area .formulario {
+  display: block;
+  padding: 1.5em;
+  padding-right: 20em;
+}
+.fieldset {
+  width: 300px;
+  height: 250px;
+}

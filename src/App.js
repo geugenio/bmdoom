@@ -3,6 +3,8 @@ import Cabecalho from "./componentes/Cabecalho";
 import Conteudo from "./componentes/Conteudo";
 import Rodape from "./componentes/Rodape";
 import Estados from "./exemplos/Estados";
+import Cadastro from "./componentes/Cadastro";
+import Login from "./componentes/Login";
 
 /*
 Arquivo APP JSX
@@ -18,7 +20,9 @@ function App() {
       {/* Nosso cabecalho tem uma propriedade chamada titulo */}
 
       <Cabecalho logo="estrela.png" titulo="BMDOOM" />
-      <Conteudo />
+      {/* <Conteudo /> */}
+      <Cadastro />
+      <Login />
       <Rodape />
     </>
   );
