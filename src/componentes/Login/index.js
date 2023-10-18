@@ -35,10 +35,10 @@ const Login = () => {
 
   return (
     <>
-      <div className={styles.area}>
+      <div className={styles.login}>
         <h1>Login</h1>
-        <form className={styles.formulario}>
-          <h1>Email</h1>
+        <form>
+          <h2>Email</h2>
           <input
             name="email_usuario"
             placeholder="insira o email..."
@@ -46,7 +46,7 @@ const Login = () => {
               setEmailL(evento.target.value);
             }}
           ></input>
-          <h1> Senha</h1>
+          <h2> Senha</h2>
           <input
             name="senha_usuario"
             type="password"
@@ -55,7 +55,6 @@ const Login = () => {
               setSenhaL(evento.target.value);
             }}
           ></input>
-          <br></br>
           <input type="button" value="verificar" onClick={() => acharUser()} />
         </form>
       </div>

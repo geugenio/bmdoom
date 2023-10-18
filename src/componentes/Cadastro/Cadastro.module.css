@@ -1,5 +1,28 @@
-.area {
-  display: block;
+.cadastro {
   justify-content: center;
-  margin-bottom: 5em;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(30deg, #a6ff9e, #deffb4);
+  padding: 2.5em;
+  width: 40vh;
+}
+.cadastro form {
+  display: flex;
+  flex-direction: column;
+}
+.cadastro h1 {
+  text-align: center;
+}
+
+input[type="button"] {
+  margin-top: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 100%);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+input[type="button"]:hover {
+  background-color: #66bb6a;
 }

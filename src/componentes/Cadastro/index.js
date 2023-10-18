@@ -42,10 +42,10 @@ const Cadastro = () => {
 
   return (
     <>
-      <div className={styles.area}>
+      <div className={styles.cadastro}>
         <h1>Cadastro</h1>
         <form className={styles.formulario}>
-          <h1>Email</h1>
+          <h2>Email</h2>
           <input
             name="email"
             placeholder="insira o email..."
@@ -53,7 +53,7 @@ const Cadastro = () => {
               setEmailU(evento.target.value);
             }}
           ></input>
-          <h1>Nome</h1>
+          <h2>Nome</h2>
           <input
             name="nome"
             placeholder="insira o nome..."
@@ -61,7 +61,7 @@ const Cadastro = () => {
               setNomeU(evento.target.value);
             }}
           ></input>
-          <h1> Senha</h1>
+          <h2> Senha</h2>
           <input
             name="senha_usuario"
             type="password"
@@ -70,7 +70,7 @@ const Cadastro = () => {
               setSenhaU(evento.target.value);
             }}
           ></input>
-          <h1>Confirme a senha</h1>
+          <h2>Confirme a senha</h2>
           <input
             name="senha_usuario_confirmar"
             type="password"
@@ -79,7 +79,6 @@ const Cadastro = () => {
               setConfSenha(evento.target.value);
             }}
           ></input>
-          <br></br>
           <input
             type="button"
             value="salvar"

@@ -2,7 +2,7 @@
 
 .rodape {
   bottom: 0px;
-  position: relative;
+  position: fixed;
   width: 100%;
   background-color: rgb(156, 218, 98);
   font-size: 1.2rem;

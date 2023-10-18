@@ -1,4 +1,16 @@
-.area {
-  display: block;
+.login {
   justify-content: center;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(30deg, #a6ff9e, #deffb4);
+  padding: 2.5em;
+  width: 40vh;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+}
+.login h1 {
+  text-align: center;
 }

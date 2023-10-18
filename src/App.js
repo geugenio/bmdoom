@@ -21,8 +21,10 @@ function App() {
 
       <Cabecalho logo="estrela.png" titulo="BMDOOM" />
       {/* <Conteudo /> */}
-      <Cadastro />
-      <Login />
+      <div class="container">
+        <Cadastro />
+        <Login />
+      </div>
       <Rodape />
     </>
   );
