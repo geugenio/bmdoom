@@ -3,35 +3,33 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 
 const Login = () => {
-  const [emailUsuarioL, setEmailL] = useState("");
-  const [senhaUsuarioL, setSenhaL] = useState("");
-  
+  const [emailUsuario, setEmailL] = useState("");
+  const [senhaUsuario, setSenhaL] = useState("");
+
   function acharUser() {
     const armazenarContas = localStorage.getItem("contas") || [];
-    console.log(armazenarContas);
 
     if (armazenarContas) {
       const contasRegistrados = JSON.parse(armazenarContas);
 
-      // if (
-      //   contasRegistrados.find(
-      //     (contas) =>
-      //       contas.emailUsuario === emailUsuarioL &&
-      //       contas.senhaUsuario === senhaUsuarioL
-      //   )
+      contasRegistrados.forEach((conta) => {
+        console.log(
+          "Email: " + conta.emailUsuario + " Senha: " + conta.senhaUsuario
+        );
+      });
       if (
         contasRegistrados.find(
           (contas) =>
-            contas.emailUsuario === emailUsuarioL &&
-            contas.senhaUsuario === senhaUsuarioL
+            contas.emailUsuario == emailUsuario &&
+            contas.senhaUsuario == senhaUsuario
         )
       ) {
-        alert("Login realizado com sucesso!");
+        alert("Logado com sucesso!");
       } else {
-        alert("Erro! Insira os dados corretamente!");
+        alert("Erro! Verifique os dados novamente.");
       }
     } else {
-      console.log("Não há usuários registrados no banco de dados");
+      console.log("Usuários não encontrados");
     }
   }
 

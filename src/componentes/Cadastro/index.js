@@ -5,7 +5,7 @@ import styles from "./Cadastro.module.css";
 const Cadastro = () => {
   const [emailUsuario, setEmailU] = useState("");
   const [nomeUsuario, setNomeU] = useState("");
-  const [SenhaUsuario, setSenhaU] = useState("");
+  const [senhaUsuario, setSenhaU] = useState("");
   const [confirmaSenhaUsuario, setConfSenha] = useState("");
   const [contas, setConta] = useState([]);
 
@@ -17,17 +17,26 @@ const Cadastro = () => {
   }, []);
 
   function salvarCadastro() {
-    if (confirmaSenhaUsuario == SenhaUsuario) {
-      alert("Cadastrado com sucesso!");
-      const novasContas = [
-        ...contas,
-        { emailUsuario, nomeUsuario, SenhaUsuario, confirmaSenhaUsuario },
-      ];
-
-      setConta(novasContas);
-      localStorage.setItem("contas", JSON.stringify(novasContas));
+    if (
+      !emailUsuario ||
+      !nomeUsuario ||
+      !senhaUsuario ||
+      !confirmaSenhaUsuario
+    ) {
+      alert("Preencha todos os campos!");
     } else {
-      alert("Senha incorreta!");
+      if (confirmaSenhaUsuario === senhaUsuario) {
+        alert("Cadastrado com sucesso!");
+        const novasContas = [
+          ...contas,
+          { emailUsuario, nomeUsuario, senhaUsuario },
+        ];
+
+        setConta(novasContas);
+        localStorage.setItem("contas", JSON.stringify(novasContas));
+      } else {
+        alert("Senha incorreta!");
+      }
     }
   }
 
@@ -38,7 +47,7 @@ const Cadastro = () => {
         <form className={styles.formulario}>
           <h1>Email</h1>
           <input
-            name="email_usuario"
+            name="email"
             placeholder="insira o email..."
             onChange={(evento) => {
               setEmailU(evento.target.value);
@@ -46,7 +55,7 @@ const Cadastro = () => {
           ></input>
           <h1>Nome</h1>
           <input
-            name="nome_usuario"
+            name="nome"
             placeholder="insira o nome..."
             onChange={(evento) => {
               setNomeU(evento.target.value);
