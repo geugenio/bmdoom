@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from "./Cadastro.module.css";
 
@@ -9,14 +9,23 @@ const Cadastro = () => {
   const [confirmaSenhaUsuario, setConfSenha] = useState("");
   const [contas, setConta] = useState([]);
 
+  useEffect(() => {
+    const armazenarContas = JSON.parse(localStorage.getItem("contas"));
+    if (armazenarContas) {
+      setConta(armazenarContas);
+    }
+  }, []);
+
   function salvarCadastro() {
     if (confirmaSenhaUsuario == SenhaUsuario) {
       alert("Cadastrado com sucesso!");
-      setConta([
+      const novasContas = [
         ...contas,
         { emailUsuario, nomeUsuario, SenhaUsuario, confirmaSenhaUsuario },
-      ]);
-      localStorage.setItem("contas", JSON.stringify(contas));
+      ];
+
+      setConta(novasContas);
+      localStorage.setItem("contas", JSON.stringify(novasContas));
     } else {
       alert("Senha incorreta!");
     }

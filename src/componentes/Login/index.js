@@ -3,16 +3,35 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 
 const Login = () => {
-  const [emailUsuarioL, setEmailU] = useState("");
-  const [senhaUsuarioL, setSenhaU] = useState("");
-
-
+  const [emailUsuarioL, setEmailL] = useState("");
+  const [senhaUsuarioL, setSenhaL] = useState("");
+  
   function acharUser() {
-    const armazenarContas = JSON.parse(localStorage.getItem("contas")) || [];
-    if (armazenarContas) {
-      const contas = JSON.parse(armazenarContas);
+    const armazenarContas = localStorage.getItem("contas") || [];
+    console.log(armazenarContas);
 
-      if (contas.find())
+    if (armazenarContas) {
+      const contasRegistrados = JSON.parse(armazenarContas);
+
+      // if (
+      //   contasRegistrados.find(
+      //     (contas) =>
+      //       contas.emailUsuario === emailUsuarioL &&
+      //       contas.senhaUsuario === senhaUsuarioL
+      //   )
+      if (
+        contasRegistrados.find(
+          (contas) =>
+            contas.emailUsuario === emailUsuarioL &&
+            contas.senhaUsuario === senhaUsuarioL
+        )
+      ) {
+        alert("Login realizado com sucesso!");
+      } else {
+        alert("Erro! Insira os dados corretamente!");
+      }
+    } else {
+      console.log("Não há usuários registrados no banco de dados");
     }
   }
 
@@ -26,7 +45,7 @@ const Login = () => {
             name="email_usuario"
             placeholder="insira o email..."
             onChange={(evento) => {
-              setEmailU(evento.target.value);
+              setEmailL(evento.target.value);
             }}
           ></input>
           <h1> Senha</h1>
@@ -35,7 +54,7 @@ const Login = () => {
             type="password"
             placeholder="insira a senha..."
             onChange={(evento) => {
-              setSenhaU(evento.target.value);
+              setSenhaL(evento.target.value);
             }}
           ></input>
           <br></br>
