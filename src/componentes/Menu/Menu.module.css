@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 
-
-ul{
-    font-family: 'Concert One', cursive;
-    display: flex;
-    list-style: none;
+.menu ul {
+  font-family: "Concert One", cursive;
+  display: flex;
+  list-style: none;
 }
-li{
-    padding: 20px;
+.menu li {
+  padding: 20px;
 }
-a{
-    text-decoration: none;
-    color: black;
+.menu a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
 }
-li:hover{
-    background-color: rgba(255, 255, 255, 0.466);
-    border-radius: 20px;
-    cursor: pointer;
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 20px;
+  cursor: pointer;
 }

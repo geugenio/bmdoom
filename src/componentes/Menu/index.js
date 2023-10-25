@@ -1,14 +1,15 @@
 import React from 'react'
 import styles from "./Menu.module.css"
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
   return (
     <div>
-      <nav>
+      <nav className={styles.menu}>
         <ul>
-          <li><a href="##">HOME</a></li>
-          <li><a href="##">SEUS FAVORITOS</a></li>
-          <li><a href="##">SOBRE NÓS</a></li>
+            <li><Link to={'/'}>Home</Link></li>
+            <li><Link to={'/login'}>Login</Link></li>
+            <li><Link to={'/cadastro'}>Cadastro</Link></li>
         </ul>
       </nav>
     </div>

@@ -7,9 +7,10 @@ const Conteudo = () => {
   const [url, setUrl] = useState("");
 
   const [favoritos, setFavoritos] = useState([]);
-
+  const [importante, setImportante] = useState(false);
   function salvarFavorito() {
-    setFavoritos([...favoritos, { nomeSite, url }]);
+    favoritos.push({ nomeSite, url, importante });
+    setFavoritos([...favoritos]);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
 
@@ -18,7 +19,7 @@ const Conteudo = () => {
       <ul>
         {favoritos[0] != undefined &&
           favoritos.map((favorito) => (
-            <li>
+            <li style={favorito.importante ? { color: "red" } : {}}>
               {favorito.nomeSite} : {favorito.url}
               <br></br>
             </li>
@@ -28,9 +29,7 @@ const Conteudo = () => {
       <div className={styles.area}>
         <h1>Conteudo</h1>
         <form className={styles.formulario}>
-          <label>Nome do Site</label>
-          <h1>{nomeSite}</h1>
-
+          <label htmlFor="nome_site">Nome do Site</label>
           <input
             name="nome_site"
             onChange={(evento) => {
@@ -38,14 +37,20 @@ const Conteudo = () => {
             }}
           ></input>
           <br></br>
-
-          <label>Url</label>
-          <h1>{url}</h1>
+          <label htmlFor="url">Url</label>
           <input
-            type="url"
             name="url"
             onChange={(evento) => {
               setUrl(evento.target.value);
+            }}
+          ></input>
+          <br></br>
+          <label htmlFor="checkbox">Importante</label>
+          <input
+            type="checkbox"
+            name="checkbox"
+            onChange={(evento) => {
+              setImportante(evento.target.value);
             }}
           ></input>
           <br></br>

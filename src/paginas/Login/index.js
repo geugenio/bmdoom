@@ -38,7 +38,7 @@ const Login = () => {
       <div className={styles.login}>
         <h1>Login</h1>
         <form>
-          <h2>Email</h2>
+          <label htmlFor="email_usuario">Email</label>
           <input
             name="email_usuario"
             placeholder="insira o email..."
@@ -46,7 +46,7 @@ const Login = () => {
               setEmailL(evento.target.value);
             }}
           ></input>
-          <h2> Senha</h2>
+          <label htmlFor="senha_usuario">Senha</label>
           <input
             name="senha_usuario"
             type="password"
